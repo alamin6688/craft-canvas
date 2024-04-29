@@ -8,6 +8,9 @@ import Home from "../Components/Home/Home";
 import SignIn from "../Components/SignIn/SignIn";
 import SignUp from "../Components/SignUp/SignUp";
 import AddCraftItem from "../Components/AddCraftItem/AddCraftItem";
+import AllArtAndCraftItems from "../Components/AllArtAndCraftItems/AllArtAndCraftItems";
+import MyList from "../Components/MyList/MyList";
+import UpdateCraftItem from "../Components/UpdateCraftItem/UpdateCraftItem";
 
 
 const router = createBrowserRouter([
@@ -31,6 +34,20 @@ const router = createBrowserRouter([
         {
           path:'/add-craft-items',
           element:<AddCraftItem></AddCraftItem>,
+        },
+        {
+          path: "/all-art-and-craft-items",
+          element: <AllArtAndCraftItems></AllArtAndCraftItems>,
+        },
+        {
+          path: "/my-list",
+          element: <MyList></MyList>,
+          loader: ()=>fetch('http://localhost:5000/crafts'),
+        },
+        {
+          path: "/update-craft/:id",
+          element: <UpdateCraftItem></UpdateCraftItem>,
+          loader: ({params})=>fetch(`http://localhost:5000/crafts/${params.id}`),
         },
       ]
     },

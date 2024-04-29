@@ -2,23 +2,30 @@ import { useContext, useState, useEffect } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { FaPen } from "react-icons/fa";
 import { BsFillInfoSquareFill } from "react-icons/bs";
-import Swal from "sweetalert2";
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
 import { AuthContext } from "../../Contexts/AuthProvuder";
+import Swal from "sweetalert2";
+
 
 const MyList = () => {
-  const { user } = useContext(AuthContext);
-  const spots = useLoaderData();
+  const  crafts  = useLoaderData();
+  console.log(crafts);
+  const {user}=useContext(AuthContext)
   const [currentUser, setCurrentUser] = useState([]);
+  const [filterValue, setFilterValue] = useState("all");
 
   useEffect(() => {
-    // Filter spots for the current user based on email
-    const filteredSpots = spots.filter(
-      (spot) => spot.email.toLowerCase() === user.email.toLowerCase()
-    );
-    setCurrentUser(filteredSpots);
-  }, [spots, user.email]);
+    // Filter crafts based on filter value
+    let filteredCrafts = crafts;
+    if (filterValue !== "all") {
+      filteredCrafts = crafts.filter(
+        (craft) => craft.customization === filterValue
+      );
+    }
+    setCurrentUser(filteredCrafts);
+  }, [crafts, filterValue]);
+
 
   const handleDelete = (_id) => {
     Swal.fire({
@@ -31,8 +38,8 @@ const MyList = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        // Delete spot
-        fetch(`https://triptrax-server.vercel.app/tourist-spots/${_id}`, {
+        // Delete craft
+        fetch(`http://localhost:5000/crafts/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -40,98 +47,79 @@ const MyList = () => {
             if (data.deletedCount) {
               Swal.fire({
                 title: "Deleted!",
-                text: "Your Spot has been deleted.",
+                text: "Your Craft has been deleted.",
                 icon: "success",
               });
 
-              // Update current user spots after deleting
-              const remainingSpots = currentUser.filter(
-                (spot) => spot._id !== _id
+              // Update current user crafts after deleting
+              const remainingCrafts = currentUser.filter(
+                (craft) => craft._id !== _id
               );
-              setCurrentUser(remainingSpots);
+              setCurrentUser(remainingCrafts);
             }
           })
           .catch((error) => {
-            console.error("Error deleting spot:", error);
+            console.error("Error deleting craft:", error);
           });
       }
     });
   };
 
+
   return (
     <div className="my-10">
-      <h1 className="text-2xl font-bold text-center mb-7">
-        {user.displayName}
-        {`'`}s Added Spots
-      </h1>
-      <div className="overflow-x-auto">
-        <table className="table-auto mx-auto md:w-full">
-          <thead>
-            <tr>
-              <th className="p-1 md:px-4 md:py-2 text-sm md:text-[18px]">
-                Spot Name
-              </th>
-              <th className="p-1 md:px-4 md:py-2 text-sm md:text-[18px]">
-                Country
-              </th>
-              <th className="p-1 md:px-4 md:py-2 text-sm md:text-[18px]">
-                Cost
-              </th>
-              <th className="p-1 md:px-4 md:py-2 text-sm md:text-[18px]">
-                Actions
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {currentUser.map((spot) => (
-              <tr key={spot._id}>
-                <td className="border p-1 md:px-4 md:py-2 text-sm md:text-lg">
-                  {spot.spotName}
-                </td>
-                <td className="border p-1 md:px-4 md:py-2 text-sm md:text-lg ">
-                  {spot.countryName}
-                </td>
-                <td className="border p-1 md:px-4 md:py-2 text-sm md:text-lg ">
-                  {spot.cost}
-                </td>
-
-                <td className="border px-2 md:px-4 py-2">
-                  <div className="flex items-center justify-center gap-3 md:gap-5">
-                    <button
-                      onClick={() => handleDelete(spot._id)}
-                      className="md:btn btn-ghost md:bg-[#FF5861] md:text-white text-sm md:text-lg font-bold"
-                      data-tooltip-id="my-tooltip"
-                      data-tooltip-content="Delete"
-                      data-tooltip-place="bottom-end"
-                    >
-                      X
-                    </button>
-                    <Link
-                      to={`/update-tourists-spot/${spot._id}`}
-                      className="md:btn btn-ghost md:bg-blue-500 md:text-white text-sm md:text-lg"
-                      data-tooltip-id="my-tooltip"
-                      data-tooltip-content="Edit"
-                      data-tooltip-place="bottom-end"
-                    >
-                      <FaPen></FaPen>
-                    </Link>
-                    <Link
-                      to={`/spot-details/${spot._id}`}
-                      className="md:btn btn-ghost md:bg-blue-400 md:text-white text-sm md:text-lg"
-                      data-tooltip-id="my-tooltip"
-                      data-tooltip-content="Details"
-                      data-tooltip-place="bottom-end"
-                    >
-                      <BsFillInfoSquareFill></BsFillInfoSquareFill>
-                    </Link>
-                  </div>
-                  <Tooltip id="my-tooltip" />
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <h1 className="text-3xl font-bold text-center">{user.displayName}{`'`}s Uploaded Crafts</h1>
+      <div className="flex items-center justify-center my-5">
+        <select value={filterValue} onChange={(e) => setFilterValue(e.target.value)}>
+          <option value="all">All</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
       </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {currentUser.map((craft) => (
+          <div key={craft._id} className="bg-white rounded-lg shadow-md overflow-hidden">
+            <img src={craft.image} alt={craft.itemName} className="w-full h-32 object-cover object-center" />
+            <div className="p-4">
+              <h2 className="text-xl font-semibold mb-2">{craft.itemName}</h2>
+              <p className="text-gray-600">{craft.subCategoryName}</p>
+              <p className="text-gray-600">{craft.price}</p>
+              <div className="mt-4 flex justify-between">
+                <button
+                  onClick={() => handleDelete(craft._id)}
+                  className="btn bg-red-500 text-white"
+                  data-tooltip-id="my-tooltip"
+                  data-tooltip-content="Delete"
+                  data-tooltip-place="bottom-end"
+                >
+                  Delete
+                </button>
+                <div className="flex gap-3">
+                  <Link
+                    to={`/update-craft/${craft._id}`}
+                    className="btn bg-blue-500 text-white"
+                    data-tooltip-id="my-tooltip"
+                    data-tooltip-content="Edit"
+                    data-tooltip-place="bottom-end"
+                  >
+                    <FaPen />
+                  </Link>
+                  <Link
+                    to={`/craft-details/${craft._id}`}
+                    className="btn bg-blue-400 text-white"
+                    data-tooltip-id="my-tooltip"
+                    data-tooltip-content="Details"
+                    data-tooltip-place="bottom-end"
+                  >
+                    <BsFillInfoSquareFill />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <Tooltip id="my-tooltip" />
     </div>
   );
 };

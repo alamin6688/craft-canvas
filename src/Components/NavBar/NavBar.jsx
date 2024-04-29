@@ -31,7 +31,7 @@ const NavBar = () => {
       </NavLink>
       <NavLink
         className="px-[5px] md:px-3 lg:px-[10px]"
-        to="/art-&-craft-items"
+        to="/all-art-and-craft-items"
       >
         All Art & craft Items
       </NavLink>
@@ -55,7 +55,7 @@ const NavBar = () => {
         <div className="flex justify-between items-center w-full lg:w-auto">
           <div className="flex items-center justify-center gap-2">
             <Link to="/" className="p-0 ">
-              <h1 className="font-bold text-3xl site-name">TripTrax</h1>
+              <h1 className="font-bold text-3xl site-name">Craft Canvas</h1>
             </Link>
           </div>
 
