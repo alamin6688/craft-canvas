@@ -1,9 +1,17 @@
-
+import Aos from 'aos';
+import 'aos/dist/aos.css'
+import { useEffect } from 'react';
 
 
 const About = () => {
+
+  useEffect(()=>{
+    Aos.init()
+  },[])
+
+
   return (
-    <div className="flex justify-center items-center h-auto mt-16 border border-white rounded-xl w-[90%] md:w-full mx-auto">
+    <div className="flex justify-center items-center h-auto mt-16 border border-white rounded-xl w-[90%] md:w-full mx-auto" data-aos="zoom-in">
       <div className="animate__animated animate__zoomIn hero bg-gray-200 md:p-2 rounded-2xl shadow-2xl mt-6 mb-20">
         <div className="hero-content text-center ">
           <div className=" py-4">

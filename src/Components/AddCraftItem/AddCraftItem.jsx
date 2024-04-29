@@ -1,4 +1,5 @@
 import Swal from "sweetalert2";
+import 'animate.css';
 
 const AddCraftItem = () => {
   const handleAddCraftItem = (e) => {
@@ -49,20 +50,20 @@ const AddCraftItem = () => {
             icon: "success",
             confirmButtonText: "Okay",
           });
-        //   form.reset();
+          form.reset();
         }
       });
   };
   return (
-    <div className="bg-orange-500 bg-opacity-40 p-24 rounded-xl my-10">
-      <h2 className="text-3xl font-extrabold text-center mb-5">
-        Add a Art/Craft Item
+    <div className="bg-gray-200 p-4 lg:p-16 rounded-3xl shadow-2xl my-10 animate__animated animate__zoomIn">
+      <h2 className="text-2xl md:text-3xl font-extrabold text-center mt-6 md:mt-0 mb-10">
+        Add a Art & Craft Item
       </h2>
       <form onSubmit={handleAddCraftItem}>
         {/* 1st row */}
         <div className="flex flex-col md:flex-row gap-4 mb-8">
           <div className="w-full md:w-1/2">
-            <label>Item Name</label>
+            <label className="text-black font-bold">Item Name</label>
             <input
               type="text"
               name="itemName"
@@ -73,7 +74,7 @@ const AddCraftItem = () => {
           </div>
 
           <div className="w-full md:w-1/2">
-          <label>Sub Category Name</label>
+          <label className="text-black font-bold">Sub Category Name</label>
             <br />
             <select
               name="subCategoryName"
@@ -92,7 +93,7 @@ const AddCraftItem = () => {
         {/* 2nd row */}
         <div className="flex flex-col md:flex-row gap-4 mb-8">
           <div className="w-full md:w-1/2">
-            <label>Rating</label>
+            <label className="text-black font-bold">Rating</label>
             <input
               type="text"
               name="rating"
@@ -101,7 +102,7 @@ const AddCraftItem = () => {
             />
           </div>
           <div className="w-full md:w-1/2">
-            <label>Short Description</label>
+            <label className="text-black font-bold">Short Description</label>
             <input
               type="text"
               name="description"
@@ -113,7 +114,7 @@ const AddCraftItem = () => {
         {/* 3rd row */}
         <div className="flex flex-col md:flex-row gap-4 mb-8">
           <div className="w-full md:w-1/2">
-            <label>Price </label>
+            <label className="text-black font-bold">Price </label>
             <input
               type="number"
               name="price"
@@ -122,7 +123,7 @@ const AddCraftItem = () => {
             />
           </div>
           <div className="w-full md:w-1/2">
-            <label>Customization</label>
+            <label className="text-black font-bold">Customization</label>
             <br />
             <select
               name="customization"
@@ -137,7 +138,7 @@ const AddCraftItem = () => {
         {/* 4th row */}
         <div className="flex flex-col md:flex-row gap-4 mb-8">
           <div className="w-full md:w-1/2">
-            <label>Processing Time</label>
+            <label className="text-black font-bold">Processing Time</label>
             <br />
             <select
               name="processingTime"
@@ -154,7 +155,7 @@ const AddCraftItem = () => {
             </select>
           </div>
           <div className="w-full md:w-1/2">
-            <label>Stock Status</label>
+            <label className="text-black font-bold">Stock Status</label>
             <br />
             <select
               name="stocStatus"
@@ -169,7 +170,7 @@ const AddCraftItem = () => {
         {/* 5th row */}
         <div className="flex flex-col md:flex-row gap-4 mb-8">
           <div className="w-full md:w-1/2">
-            <label>User Name</label>
+            <label className="text-black font-bold">User Name</label>
             <input
               type="text"
               name="name"
@@ -178,7 +179,7 @@ const AddCraftItem = () => {
             />
           </div>
           <div className="w-full md:w-1/2">
-            <label>User Email</label>
+            <label className="text-black font-bold">User Email</label>
             <input
               type="email"
               name="email"
@@ -190,7 +191,7 @@ const AddCraftItem = () => {
         {/* 5th row */}
         <div className="mb-8">
           <div className="w-full">
-            <label>Image URl</label>
+            <label className="text-black font-bold">Image URl</label>
             <input
               type="text"
               name="image"
@@ -201,7 +202,7 @@ const AddCraftItem = () => {
         </div>
 
         {/* submit here */}
-        <input type="submit" value="Add Item" className="btn btn-block" />
+        <input type="submit" value="Add Item" className="btn btn-primary border-none bg-orange-400 text-black font-bold hover:bg-orange-500 w-full"/>
       </form>
     </div>
   );

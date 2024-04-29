@@ -25,7 +25,7 @@ const ArtAndCraftCategories = () => {
     return (
         <div className="container mx-auto px-4 py-8 mb-8">
         <h1 className="text-3xl md:text-4xl text-center font-bold mb-14 md:mb-16 bg-gray-200 rounded-2xl shadow-xl py-8 animate__animated animate__zoomIn">
-            Art And Craft Categories
+            Art & Craft Categories
         </h1>
         <div  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" >
             {categories && categories.map((category) => (
