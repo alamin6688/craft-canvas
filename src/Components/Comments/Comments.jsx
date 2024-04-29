@@ -82,9 +82,9 @@ const Comments = () => {
 
   return (
     <>
-      <div className=" rounded-xl">
+      <div className="rounded-xl">
         <div className="hidden lg:block">
-          <h1 className="text-3xl md:text-4xl text-center font-bold mt-10 mb-12 bg-gray-200 rounded-2xl shadow-xl py-8 animate__animated animate__zoomIn">
+          <h1 className="text-xl md:text-4xl text-center font-bold mt-10 mb-12 py-8 animate__animated animate__zoomIn ">
             Our Customers reviews
           </h1>
           <Slider {...settingsLg}>
@@ -111,7 +111,7 @@ const Comments = () => {
         </div>
 
         <div className="hidden md:block lg:hidden">
-          <h1 className="text-center text-3xl font-bold mt-10 mb-5">
+          <h1 className="text-3xl md:text-4xl text-center font-bold mt-10 mb-6 py-8 animate__animated animate__zoomIn">
             Our Customers reviews
           </h1>
           <Slider {...settingsMd}>
@@ -138,7 +138,7 @@ const Comments = () => {
         </div>
 
         <div className="flex flex-col items-center justify-center md:hidden lg:hidden ">
-          <h1 className="text-3xl md:text-4xl text-center font-bold mt-10 mb-6 bg-gray-200 rounded-2xl shadow-xl py-8 animate__animated animate__zoomIn">
+          <h1 className="text-3xl md:text-4xl text-center font-bold mt-10 mb-6 py-8 animate__animated animate__zoomIn">
             Our Customers reviews
           </h1>
 
