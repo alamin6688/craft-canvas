@@ -1,5 +1,6 @@
 import { FaStar } from "react-icons/fa6";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const AllArtAndCraftItems = () => {
   const [crafts, setCrafts] = useState(null);
@@ -22,7 +23,7 @@ const AllArtAndCraftItems = () => {
             //   <h1>{craft.itemName}</h1>
             //   <img src={craft.image} alt={craft.itemName} />
             // </div>
-            <div key={craft.id}>
+            <div key={craft._id}>
             <div className="card card-compact w-full bg-base-100 shadow-xl space-y-4">
             <figure>
             <img src={craft.image} className="rounded-3xl" />
@@ -32,9 +33,9 @@ const AllArtAndCraftItems = () => {
               <p>Item Name: {craft.subCategoryName}</p>
               <p>Stock: {craft.stocStatus}</p>
               <p className="flex items-center gap-1"><FaStar className="text-orange-500"/>{craft.rating}</p>
-              <div className="card-actions justify-start mt-3 mb-1">
+              <Link to={`/crafts-details/${craft._id}`} className="card-actions justify-start mt-3 mb-1">
                 <button className="btn bg-orange-500 text-white">View Details</button>
-              </div>
+              </Link>
             </div>
           </div>
           </div>

@@ -71,14 +71,22 @@ const AddCraftItem = () => {
               required
             />
           </div>
+
           <div className="w-full md:w-1/2">
-            <label>Sub Category Name</label>
-            <input
-              type="text"
+          <label>Sub Category Name</label>
+            <br />
+            <select
               name="subCategoryName"
-              placeholder="Sub Category Name"
-              className="input input-bordered w-full"
-            />
+              className="w-full rounded-lg px-5 py-[13px] outline-none"
+            >
+              <option>Select Sub Category Name</option>
+              <option value="Landscape Painting">Landscape Painting</option>
+              <option value="Portrait Drawing">Portrait Drawing</option>
+              <option value="Watercolour Painting">Watercolour Painting</option>
+              <option value="Oil Painting">Oil Painting</option>
+              <option value="Charcoal Sketching">Charcoal Sketching</option>
+              <option value="Cartoon Drawing">Cartoon Drawing</option>
+            </select>
           </div>
         </div>
         {/* 2nd row */}

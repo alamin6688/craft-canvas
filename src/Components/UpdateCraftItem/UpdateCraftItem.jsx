@@ -5,8 +5,19 @@ const UpdateCraftItem = () => {
   const craft = useLoaderData();
   const {
     _id,
+    itemName,
+    subCategoryName,
+    rating,
+    description,
+    price,
+    customization,
+    processingTime,
+    stocStatus,
+    name,
+    email,
+    image,
   } = craft;
-  console.log(craft)
+  console.log(craft);
 
   const handleUpdateCraftItem = (e) => {
     e.preventDefault();
@@ -65,26 +76,34 @@ const UpdateCraftItem = () => {
         Update Craft Item
       </h2>
       <form onSubmit={handleUpdateCraftItem}>
-       {/* 1st row */}
-       <div className="flex flex-col md:flex-row gap-4 mb-8">
+        {/* 1st row */}
+        <div className="flex flex-col md:flex-row gap-4 mb-8">
           <div className="w-full md:w-1/2">
             <label>Item Name</label>
             <input
               type="text"
               name="itemName"
-              placeholder="Item Name"
+              defaultValue={itemName}
               className="input input-bordered w-full"
               required
             />
           </div>
           <div className="w-full md:w-1/2">
             <label>Sub Category Name</label>
-            <input
-              type="text"
+            <br />
+            <select
               name="subCategoryName"
-              placeholder="Sub Category Name"
-              className="input input-bordered w-full"
-            />
+              defaultValue={subCategoryName}
+              className="w-full rounded-lg px-5 py-[13px] outline-none"
+            >
+              <option>Select Sub Category Name</option>
+              <option value="Landscape Painting">Landscape Painting</option>
+              <option value="Portrait Drawing">Portrait Drawing</option>
+              <option value="Watercolour Painting">Watercolour Painting</option>
+              <option value="Oil Painting">Oil Painting</option>
+              <option value="Charcoal Sketching">Charcoal Sketching</option>
+              <option value="Cartoon Drawing">Cartoon Drawing</option>
+            </select>
           </div>
         </div>
         {/* 2nd row */}
@@ -94,7 +113,7 @@ const UpdateCraftItem = () => {
             <input
               type="text"
               name="rating"
-              placeholder="Rating"
+              defaultValue={rating}
               className="input input-bordered w-full"
             />
           </div>
@@ -103,7 +122,7 @@ const UpdateCraftItem = () => {
             <input
               type="text"
               name="description"
-              placeholder="Short Description"
+              defaultValue={description}
               className="input input-bordered w-full"
             />
           </div>
@@ -115,7 +134,7 @@ const UpdateCraftItem = () => {
             <input
               type="number"
               name="price"
-              placeholder="Price in $"
+              defaultValue={price}
               className="input input-bordered w-full"
             />
           </div>
@@ -124,6 +143,7 @@ const UpdateCraftItem = () => {
             <br />
             <select
               name="customization"
+              defaultValue={customization}
               className="w-full rounded-lg px-5 py-[13px] outline-none"
             >
               <option>Select Customization</option>
@@ -139,6 +159,8 @@ const UpdateCraftItem = () => {
             <br />
             <select
               name="processingTime"
+
+              defaultValue={processingTime}
               className="w-full rounded-lg px-5 py-[13px] outline-none"
             >
               <option>Select Processing Time</option>
@@ -156,6 +178,7 @@ const UpdateCraftItem = () => {
             <br />
             <select
               name="stocStatus"
+              defaultValue={stocStatus}
               className="w-full rounded-lg px-5 py-[13px] outline-none"
             >
               <option>Select Stock Status</option>
@@ -171,7 +194,8 @@ const UpdateCraftItem = () => {
             <input
               type="text"
               name="name"
-              placeholder="User Name"
+      
+              defaultValue={name}
               className="input input-bordered w-full"
             />
           </div>
@@ -180,7 +204,7 @@ const UpdateCraftItem = () => {
             <input
               type="email"
               name="email"
-              placeholder="User Email"
+              defaultValue={email}
               className="input input-bordered w-full"
             />
           </div>
@@ -192,14 +216,14 @@ const UpdateCraftItem = () => {
             <input
               type="text"
               name="image"
-              placeholder="Image URL Here.."
+              defaultValue={image}
               className="input input-bordered w-full"
             />
           </div>
         </div>
 
         {/* submit here */}
-        <input type="submit" value="Add Item" className="btn btn-block" />
+        <input type="submit" value="Update Item" className="btn btn-block" />
       </form>
     </div>
   );

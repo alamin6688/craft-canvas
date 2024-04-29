@@ -8,9 +8,18 @@ import Home from "../Components/Home/Home";
 import SignIn from "../Components/SignIn/SignIn";
 import SignUp from "../Components/SignUp/SignUp";
 import AddCraftItem from "../Components/AddCraftItem/AddCraftItem";
+import AddCattegotyItem from "../Components/AddCattegotyItem/AddCattegotyItem";
 import AllArtAndCraftItems from "../Components/AllArtAndCraftItems/AllArtAndCraftItems";
 import MyList from "../Components/MyList/MyList";
 import UpdateCraftItem from "../Components/UpdateCraftItem/UpdateCraftItem";
+import ArtAndCraftCategories from "../Components/ArtAndCraftCategories/ArtAndCraftCategories";
+import LandscapePainting from '../Components/Categories/LandscapePainting'
+import CartoonDrawing from '../Components/Categories/CartoonDrawing'
+import CharcoalSkerching from '../Components/Categories/CharcoalSkerching'
+import OilPainting from '../Components/Categories/OilPainting'
+import PotraitDrawing from '../Components/Categories/PotraitDrawing'
+import WaterColourPainting from '../Components/Categories/WaterColourPainting'
+import Details from "../Components/Details/Details";
 
 
 const router = createBrowserRouter([
@@ -36,6 +45,10 @@ const router = createBrowserRouter([
           element:<AddCraftItem></AddCraftItem>,
         },
         {
+          path:'/add-category-item',
+          element:<AddCattegotyItem></AddCattegotyItem>,
+        },
+        {
           path: "/all-art-and-craft-items",
           element: <AllArtAndCraftItems></AllArtAndCraftItems>,
         },
@@ -45,9 +58,47 @@ const router = createBrowserRouter([
           loader: ()=>fetch('http://localhost:5000/crafts'),
         },
         {
+          path: "/my-list",
+          element: <MyList></MyList>,
+          loader: ()=>fetch('http://localhost:5000/crafts'),
+        },
+        {
+          path: "/art-and-craft-categories",
+          element: <ArtAndCraftCategories></ArtAndCraftCategories>,
+        },
+        {
           path: "/update-craft/:id",
           element: <UpdateCraftItem></UpdateCraftItem>,
           loader: ({params})=>fetch(`http://localhost:5000/crafts/${params.id}`),
+        },
+        {
+          path:'/landscape-painting',
+          element:<LandscapePainting></LandscapePainting>,
+        },
+        {
+          path:'/portrait-drawing',
+          element:<PotraitDrawing></PotraitDrawing>,
+        },
+        {
+          path:'/watercolour-painting',
+          element:<WaterColourPainting></WaterColourPainting>,
+        },
+        {
+          path:'/oil-painting',
+          element:<OilPainting></OilPainting>,
+        },
+        {
+          path:'/charcoal-sketching',
+          element:<CharcoalSkerching></CharcoalSkerching>,
+        },
+        {
+          path:'/cartoon-drawing',
+          element:<CartoonDrawing></CartoonDrawing>,
+        },
+        {
+          path:'/crafts-details/:id',
+          element:<Details></Details>,
+          loader: ()=>fetch(`http://localhost:5000/crafts`),
         },
       ]
     },
