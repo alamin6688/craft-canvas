@@ -22,7 +22,7 @@ const NavBar = () => {
   };
 
   const links = (
-    <div className=" text-[13px] md:text-[17px] font-bold w-ful navlinks">
+    <div className=" text-[13px] md:text-[17px] font-bold w-full">
       <NavLink
         className="pl-0 px-[5px] md:pl-0 md:px-3 lg:pl-0 lg:px-[10px]"
         to="/"
@@ -51,11 +51,11 @@ const NavBar = () => {
   );
   return (
     <>
-      <div className=" flex flex-col lg:flex-row items-center justify-between bg-base-100 p-0 space-y-2 mt-3">
+      <div className=" flex flex-col lg:flex-row items-center justify-between bg-base-100 p-0 space-y-2 mt-4 mb-8">
         <div className="flex justify-between items-center w-full lg:w-auto">
           <div className="flex items-center justify-center gap-2">
             <Link to="/" className="p-0 ">
-              <h1 className="font-bold text-3xl site-name">Craft Canvas</h1>
+              <h1 className="font-bold text-3xl md:text-4xl site-name">Craft Canvas</h1>
             </Link>
           </div>
 
