@@ -11,6 +11,9 @@ import SignIn from './Components/SignIn/SignIn';
 import SignUp from './Components/SignUp/SignUp';
 import { HelmetProvider } from 'react-helmet-async';
 import AuthProvider from './Contexts/AuthProvuder';
+import ArtCraftItems from './Components/Art&CraftItems/ArtCraftItems';
+import MyList from './Components/MyList/MyList';
+import AddCraftItem from './Components/AddCraftItem/AddCraftItem';
 
 
 
@@ -23,6 +26,18 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home></Home>,
+      },
+      {
+        path:'/art-&-craft-items',
+        element:<ArtCraftItems></ArtCraftItems>,
+      },
+      {
+        path:'/add-craft-items',
+        element:<AddCraftItem></AddCraftItem>,
+      },
+      {
+        path: '/my-list',
+        element: <MyList></MyList>
       },
       {
         path:'/sign-in',

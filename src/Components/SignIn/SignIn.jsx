@@ -12,9 +12,6 @@ import { FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../Contexts/AuthProvuder";
 
 
-
-
-
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 
@@ -33,7 +30,7 @@ const SignIn = () => {
         console.log(email, password)
 
 
-        //Signin  user
+        //SignIn  user
         signInUser(email, password)
             .then(result => {
                 console.log(result.user)

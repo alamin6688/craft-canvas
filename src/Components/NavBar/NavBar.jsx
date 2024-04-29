@@ -1,12 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import "./NavBar.css";
+// import { useContext } from "react";
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
+// import { AuthContext } from "../../Contexts/AuthProvider";
 import DarkMode from "../DarkMode/DarkMode";
 import { useContext } from "react";
 import { AuthContext } from "../../Contexts/AuthProvuder";
-
-
 
 const NavBar = () => {
   const { user, logOutUser } = useContext(AuthContext);
@@ -22,12 +22,30 @@ const NavBar = () => {
   };
 
   const links = (
-    <div className=" text-[13px] md:text-[17px] font-bold w-full ">
+    <div className=" text-[13px] md:text-[17px] font-bold w-ful navlinks">
       <NavLink
         className="pl-0 px-[5px] md:pl-0 md:px-3 lg:pl-0 lg:px-[10px]"
         to="/"
       >
         Home
+      </NavLink>
+      <NavLink
+        className="px-[5px] md:px-3 lg:px-[10px]"
+        to="/art-&-craft-items"
+      >
+        All Art & craft Items
+      </NavLink>
+      <NavLink
+        className="px-[5px] md:px-3 lg:px-[10px]"
+        to="/add-craft-items"
+      >
+        Add Craft Item
+      </NavLink>
+      <NavLink
+        className="pr-0 px-[5px] md:pr-0 md:px-3 lg:px-[10px]"
+        to="/my-list"
+      >
+        My List
       </NavLink>
     </div>
   );
@@ -37,7 +55,7 @@ const NavBar = () => {
         <div className="flex justify-between items-center w-full lg:w-auto">
           <div className="flex items-center justify-center gap-2">
             <Link to="/" className="p-0 ">
-              <h1 className="font-bold text-3xl site-name">Craft Canvas</h1>
+              <h1 className="font-bold text-3xl site-name">TripTrax</h1>
             </Link>
           </div>
 
