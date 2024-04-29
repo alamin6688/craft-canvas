@@ -20,6 +20,7 @@ import OilPainting from '../Components/Categories/OilPainting'
 import PotraitDrawing from '../Components/Categories/PotraitDrawing'
 import WaterColourPainting from '../Components/Categories/WaterColourPainting'
 import Details from "../Components/Details/Details";
+import PrivateRoute from "../Routes/PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -42,11 +43,11 @@ const router = createBrowserRouter([
         },
         {
           path:'/add-craft-items',
-          element:<AddCraftItem></AddCraftItem>,
+          element:<PrivateRoute><AddCraftItem></AddCraftItem></PrivateRoute>,
         },
         {
           path:'/add-category-item',
-          element:<AddCattegotyItem></AddCattegotyItem>,
+          element:<PrivateRoute><AddCattegotyItem></AddCattegotyItem></PrivateRoute>,
         },
         {
           path: "/all-art-and-craft-items",
@@ -54,12 +55,7 @@ const router = createBrowserRouter([
         },
         {
           path: "/my-list",
-          element: <MyList></MyList>,
-          loader: ()=>fetch('http://localhost:5000/crafts'),
-        },
-        {
-          path: "/my-list",
-          element: <MyList></MyList>,
+          element: <PrivateRoute><MyList></MyList></PrivateRoute>,
           loader: ()=>fetch('http://localhost:5000/crafts'),
         },
         {
@@ -97,7 +93,7 @@ const router = createBrowserRouter([
         },
         {
           path:'/crafts-details/:id',
-          element:<Details></Details>,
+          element:<PrivateRoute><Details></Details></PrivateRoute>,
           loader: ()=>fetch(`http://localhost:5000/crafts`),
         },
       ]
