@@ -15,7 +15,7 @@ import "swiper/css/scrollbar";
 
 const Slider = () => {
   return (
-    <div className="h-[30vh] md:h-[45vh] lg:h-[70vh] relative flex justify-center items-center animate__animated animate__fadeInDownBig rounded-xl mb-8">
+    <div className="h-[30vh] md:h-[45vh] lg:h-[70vh] relative flex justify-center items-center animate__animated animate__fadeInDownBig rounded-xl shadow-2xl mb-8">
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade]}
         effect="fade"

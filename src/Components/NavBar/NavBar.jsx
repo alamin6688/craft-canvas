@@ -55,7 +55,7 @@ const NavBar = () => {
         <div className="flex justify-between items-center w-full lg:w-auto">
           <div className="flex items-center justify-center gap-2">
             <Link to="/" className="p-0 ">
-              <h1 className="font-bold text-3xl md:text-4xl site-name">Craft Canvas</h1>
+              <h1 className="font-bold text-2xl md:text-4xl site-name">Craft Canvas</h1>
             </Link>
           </div>
 

@@ -1,6 +1,7 @@
 import { FaStar } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import 'animate.css';
 
 const CraftItems = () => {
   const [crafts, setCrafts] = useState(null);
@@ -15,7 +16,9 @@ const CraftItems = () => {
   }, []);
   return (
     <div>
-      <h1 className="text-center text-4xl">Craft Items</h1>
+      <h1 className="text-3xl md:text-4xl text-center font-bold mt-10 mb-6 bg-gray-200 rounded-2xl shadow-xl py-8 animate__animated animate__zoomIn">
+        Craft Items
+      </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {crafts !== null &&
           crafts.map((craft) => (

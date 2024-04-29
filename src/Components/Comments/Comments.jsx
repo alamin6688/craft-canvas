@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import 'animate.css';
 
 const Comments = () => {
   const settingsLg = {
@@ -34,10 +35,10 @@ const Comments = () => {
   const data = [
     {
       id: 1,
-      photo: "https://i.postimg.cc/yNc48J9B/img-1-1697904907198.jpg",
-      name: "Muhammad Saif",
+      photo: "https://i.postimg.cc/15ZtKW9y/portrait-man-laughing.jpg",
+      name: "Ben Tenision",
       comment:
-        "TripTrax made my dreams real! From scenic views to tasty meals, every moment was magic.",
+        "At Craft Canvas, I found a nurturing environment where my artistic journey feels valued and supported.",
     },
     {
       id: 2,
@@ -45,7 +46,7 @@ const Comments = () => {
         "https://i.postimg.cc/DzpgHWg7/alexander-hipp-i-EEBWg-Y-6l-A-unsplash.jpg",
       name: "Liam Wilson",
       comment:
-        "TripTrax uncovered hidden gems worldwide! Unforgettable experiences, thanks to their smooth planning.",
+        "The supportive community have fueled my creativity and helped me flourish in ways I never imagined.",
     },
     {
       id: 3,
@@ -53,7 +54,7 @@ const Comments = () => {
         "https://i.postimg.cc/ncK1ZSkR/leio-mclaren-L2d-Tmh-Qzx4-Q-unsplash.jpg",
       name: "Ava Thompson",
       comment:
-        "With TripTrax, every journey was an adventure! From mountains to cities, their tours left me speechless.",
+        "At Craft Canvas, I found a nurturing environment where my artistic journey feels valued and supported.",
     },
     {
       id: 4,
@@ -61,13 +62,13 @@ const Comments = () => {
         "https://i.postimg.cc/4N5JQsL1/alex-suprun-ZHv-M3-XIOHo-E-unsplash.jpg",
       name: "Noah Clark",
       comment:
-        "TripTrax took me on a world journey! From beaches to ruins, I experienced it all.",
+        "The supportive community have fueled my creativity and helped me flourish in ways I never imagined.",
     },
     {
       id: 5,
       photo: "https://i.postimg.cc/15ZtKW9y/portrait-man-laughing.jpg",
       comment:
-        "Exploring with TripTrax was a dream! Expert guides and seamless planning made it special.",
+        "At Craft Canvas, I found a nurturing environment where my artistic journey feels valued and supported.",
     },
     {
       id: 6,
@@ -75,7 +76,7 @@ const Comments = () => {
         "https://i.postimg.cc/JhBVvLqv/close-up-portrait-man-looking-camera-outdoors.jpg",
       name: "James Garcia",
       comment:
-        "TripTrax made my tour unforgettable! From villages to cities, every spot was a delight.",
+        "The supportive community have fueled my creativity and helped me flourish in ways I never imagined.",
     },
   ];
 
@@ -83,7 +84,7 @@ const Comments = () => {
     <>
       <div className=" rounded-xl">
         <div className="hidden lg:block">
-          <h1 className="text-center text-3xl font-bold mt-10 mb-5">
+          <h1 className="text-3xl md:text-4xl text-center font-bold mt-10 mb-12 bg-gray-200 rounded-2xl shadow-xl py-8 animate__animated animate__zoomIn">
             Our Customers reviews
           </h1>
           <Slider {...settingsLg}>
@@ -137,7 +138,7 @@ const Comments = () => {
         </div>
 
         <div className="flex flex-col items-center justify-center md:hidden lg:hidden ">
-          <h1 className="text-center text-3xl font-bold mt-10 mb-5">
+          <h1 className="text-3xl md:text-4xl text-center font-bold mt-10 mb-6 bg-gray-200 rounded-2xl shadow-xl py-8 animate__animated animate__zoomIn">
             Our Customers reviews
           </h1>
 
