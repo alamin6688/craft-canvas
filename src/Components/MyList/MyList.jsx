@@ -104,15 +104,9 @@ const MyList = () => {
                   >
                     <FaPen />
                   </Link>
-                  <Link
-                    to={`/craft-details/${craft._id}`}
-                    className="btn bg-blue-400 text-white"
-                    data-tooltip-id="my-tooltip"
-                    data-tooltip-content="Details"
-                    data-tooltip-place="bottom-end"
-                  >
-                    <BsFillInfoSquareFill />
-                  </Link>
+                  <Link to={`/crafts-details/${craft._id}`} className="btn bg-blue-600 text-white">
+                <BsFillInfoSquareFill></BsFillInfoSquareFill>
+              </Link>
                 </div>
               </div>
             </div>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const LandscapePainting = () => {
   const [crafts, setCrafts] = useState(null);
@@ -33,6 +34,9 @@ const LandscapePainting = () => {
               <p className="text-gray-700 mb-2">Rating: {craft.rating}</p>
               <p className="text-gray-700 mb-2">Price: {craft.price}</p>
               {/* Include other details of the craft item if needed */}
+              <Link to={`/crafts-details/${craft._id}`} className="card-actions justify-start mt-3 mb-1">
+                <button className="btn bg-orange-500 text-white">View Details</button>
+              </Link>
             </div>
           </div>
         ))}

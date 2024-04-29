@@ -1,5 +1,6 @@
 import { FaStar } from "react-icons/fa6";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const CraftItems = () => {
   const [crafts, setCrafts] = useState(null);
@@ -33,7 +34,9 @@ const CraftItems = () => {
               <p>Stock: {craft.stocStatus}</p>
               <p className="flex items-center gap-1"><FaStar className="text-orange-500"/>{craft.rating}</p>
               <div className="card-actions justify-start mt-3 mb-1">
+              <Link to={`/crafts-details/${craft._id}`} className="card-actions justify-start mt-3 mb-1">
                 <button className="btn bg-orange-500 text-white">View Details</button>
+              </Link>
               </div>
             </div>
           </div>
