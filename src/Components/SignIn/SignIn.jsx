@@ -181,7 +181,7 @@ const SignIn = () => {
 
             <div className="text-center mb-7">
               <p>
-                New to Template? Please &nbsp;
+                Don&apos;t have an account? Please &nbsp;
                 <Link to="/sign-up" className="text-blue-500">
                   Sign Up
                 </Link>
