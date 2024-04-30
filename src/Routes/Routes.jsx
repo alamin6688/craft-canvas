@@ -56,7 +56,7 @@ const router = createBrowserRouter([
         {
           path: "/my-list",
           element: <PrivateRoute><MyList></MyList></PrivateRoute>,
-          loader: ()=>fetch('http://localhost:5000/crafts'),
+          loader: ()=>fetch('https://craft-canvas-server.vercel.app/crafts'),
         },
         {
           path: "/art-and-craft-categories",
@@ -65,7 +65,7 @@ const router = createBrowserRouter([
         {
           path: "/update-craft/:id",
           element: <UpdateCraftItem></UpdateCraftItem>,
-          loader: ({params})=>fetch(`http://localhost:5000/crafts/${params.id}`),
+          loader: ({params})=>fetch(`https://craft-canvas-server.vercel.app/crafts/${params.id}`),
         },
         {
           path:'/landscape-painting',
@@ -94,7 +94,7 @@ const router = createBrowserRouter([
         {
           path:'/crafts-details/:id',
           element:<PrivateRoute><Details></Details></PrivateRoute>,
-          loader: ()=>fetch(`http://localhost:5000/crafts`),
+          loader: ()=>fetch(`https://craft-canvas-server.vercel.app/crafts`),
         },
       ]
     },

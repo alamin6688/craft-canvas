@@ -16,7 +16,7 @@ const AddCattegotyItem = () => {
     console.log(newCategoryInfo);
 
     //post tourist sport
-    fetch("http://localhost:5000/categories", {
+    fetch("https://craft-canvas-server.vercel.app/categories", {
       method: "POST",
       headers: {
         "content-type": "application/json",

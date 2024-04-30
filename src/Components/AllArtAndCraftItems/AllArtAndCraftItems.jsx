@@ -12,7 +12,7 @@ const AllArtAndCraftItems = () => {
   console.log(crafts);
 
   useEffect(() => {
-    fetch("http://localhost:5000/crafts")
+    fetch("https://craft-canvas-server.vercel.app/crafts")
       .then((res) => res.json())
       .then((data) => {
         setCrafts(data);

@@ -49,7 +49,7 @@ const SignUp = () => {
 
         // post user to database
         const user = { name, email, password };
-        fetch("http://localhost:5000/users/", {
+        fetch("https://craft-canvas-server.vercel.app/users/", {
           method: "POST",
           headers: {
             "content-type": "application/json",

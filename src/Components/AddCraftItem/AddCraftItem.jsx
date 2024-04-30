@@ -33,7 +33,7 @@ const AddCraftItem = () => {
     console.log(newCraftInfo);
 
     //post tourist sport
-    fetch("http://localhost:5000/crafts", {
+    fetch("https://craft-canvas-server.vercel.app/crafts", {
       method: "POST",
       headers: {
         "content-type": "application/json",
