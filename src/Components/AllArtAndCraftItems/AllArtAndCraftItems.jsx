@@ -5,6 +5,7 @@ import { IoMdInformationCircle } from "react-icons/io";
 import { IoMdTime } from "react-icons/io";
 import Aos from 'aos';
 import 'aos/dist/aos.css'
+import 'animate.css';
 
 const AllArtAndCraftItems = () => {
   const [crafts, setCrafts] = useState(null);
@@ -31,12 +32,8 @@ const AllArtAndCraftItems = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {crafts !== null &&
           crafts.map((craft) => (
-            // <div key={craft.id}>
-            //   <h1>{craft.itemName}</h1>
-            //   <img src={craft.image} alt={craft.itemName} />
-            // </div>
             <div key={craft._id}>
-            <div className="card card-compact w-full bg-base-100 shadow-xl space-y-4" data-aos="zoom-in">
+            <div className="card card-compact w-full bg-base-100 shadow-2xl space-y-4 border-2" data-aos="zoom-in">
             <figure>
             <img src={craft.image} className="rounded-3xl w-[90%] h-[250px] mx-auto object-cover mt-5" />
             </figure>
@@ -55,7 +52,7 @@ const AllArtAndCraftItems = () => {
               Rating: {craft.rating}
               </p>
               <Link to={`/crafts-details/${craft._id}`} className="card-actions justify-start mt-3 mb-1">
-                <button className="btn bg-orange-500 text-white">View Details</button>
+                <button className="btn bg-orange-500 hover:bg-orange-600 text-white">View Details</button>
               </Link>
             </div>
           </div>

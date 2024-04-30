@@ -40,7 +40,7 @@ const Details = () => {
           <p><strong>Buyer&apos;s Email:</strong> {clickedCraft.email}</p>
           <p><strong>Rating:</strong> {clickedCraft.rating}</p>
           <p><strong>Price:</strong> {clickedCraft.price}</p>
-          <button className="btn bg-orange-400 hover:bg-orange-500 text-black font-bold w-[30%] mt-2 mb-4">
+          <button className="btn bg-orange-500 hover:bg-orange-600 text-black font-bold w-[30%] mt-2 mb-4">
             Buy Now
           </button>
         </div>
