@@ -6,6 +6,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css'
 import { IoMdInformationCircle } from "react-icons/io";
 import { FaLocationArrow } from "react-icons/fa6";
+import { IoMdTime } from "react-icons/io";
 
 const CraftItems = () => {
   const [crafts, setCrafts] = useState(null);
@@ -50,7 +51,7 @@ const CraftItems = () => {
               <p className="flex items-center gap-1 text-gray-600 font-semibold"><IoMdInformationCircle className="text-orange-400"/> &nbsp;
               Stock: {craft.stocStatus}
               </p>
-              <p className="flex items-center gap-1 text-gray-600 font-semibold"><FaStar className="text-orange-400"/> &nbsp;
+              <p className="flex items-center gap-1 text-gray-600 font-semibold"><IoMdTime className="text-orange-400"/> &nbsp;
               Processing Time: {craft.processingTime}
               </p>
               <p className="flex items-center gap-1 text-gray-600 font-semibold"><FaStar className="text-orange-400"/> &nbsp;

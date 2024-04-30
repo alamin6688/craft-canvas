@@ -10,6 +10,8 @@ import { FaStar } from "react-icons/fa6";
 import { FaDollarSign } from "react-icons/fa";
 import 'animate.css';
 import { MdEdit } from "react-icons/md";
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 
 const MyList = () => {
@@ -30,6 +32,10 @@ const MyList = () => {
     setCurrentUser(filteredCrafts);
   }, [crafts, filterValue]);
 
+
+  useEffect(() => {
+    Aos.init();
+  }, []);
 
   const handleDelete = (_id) => {
     Swal.fire({
@@ -84,7 +90,7 @@ const MyList = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {currentUser.map((craft) => (
-          <div key={craft._id} className="bg-gray-200 rounded-lg shadow-md overflow-hidden p-3">
+          <div key={craft._id} className="bg-gray-200 rounded-lg shadow-md overflow-hidden p-3" data-aos="zoom-in">
             <img src={craft.image} alt={craft.itemName} className="w-full h-[250px] object-cover rounded-2xl" />
             <div className="p-4 space-y-4">
             <h2 className="card-title font-bold">{craft.itemName}</h2>
