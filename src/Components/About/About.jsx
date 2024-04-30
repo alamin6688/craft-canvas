@@ -17,7 +17,7 @@ const About = () => {
           <div className=" py-4">
             <h1 className="text-3xl md:text-5xl font-bold">Hello People!</h1>
             <p className="py-6 w-full">
-            Craft Canvas is an online sanctuary for artisans and craft enthusiasts where inspiration meets convenience. Navigating through its virtual aisles reveals a treasure trove of premium supplies, curated with passion and expertise. From paints to patterns, every click sparks creativity and fuels artistic endeavors. With seamless browsing and secure transactions, Craft Canvas empowers creators to turn their digital canvases into tangible works of art.
+            Craft Canvas is an online sanctuary for artisans and craft enthusiasts where inspiration meets convenience. Navigating through its virtual aisles reveals a treasure trove of premium supplies, curated with passion and expertise. From paints to patterns, every click sparks creativity and fuels artistic endeavors. With seamless browsing and secure transactions, craft Canvas empowers creators to turn their digital canvases into tangible works of art.
             </p>
             <p className="text-lg text-gray-800 leading-relaxed">
               <b>Located at:</b> Dhaka, Bangladesh <br />
