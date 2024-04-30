@@ -88,8 +88,8 @@ const SignIn = () => {
   return (
     <>
       <Helmet>
-        <title>Template | Sign In</title>
-      </Helmet>
+                <title>Craft Canvus | Sign In</title>
+            </Helmet>
 
       <div className="mb-5">
         <div

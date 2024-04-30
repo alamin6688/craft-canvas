@@ -1,5 +1,6 @@
 import Swal from "sweetalert2";
 import 'animate.css';
+import { Helmet } from "react-helmet-async";
 
 const AddCraftItem = () => {
   const handleAddCraftItem = (e) => {
@@ -56,6 +57,9 @@ const AddCraftItem = () => {
   };
   return (
     <div className="bg-gray-200 p-4 lg:p-16 rounded-3xl shadow-2xl my-10 animate__animated animate__zoomIn">
+       <Helmet>
+                <title>Craft Canvus | Add Craft Items</title>
+            </Helmet>
       <h2 className="text-2xl md:text-3xl font-extrabold text-center mt-6 md:mt-0 mb-10">
         Add a Art & Craft Item
       </h2>

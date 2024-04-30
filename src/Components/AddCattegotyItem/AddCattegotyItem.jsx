@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 
 const AddCattegotyItem = () => {
@@ -33,12 +34,15 @@ const AddCattegotyItem = () => {
             icon: "success",
             confirmButtonText: "Okay",
           });
-            form.reset();
+          form.reset();
         }
       });
   };
   return (
-    <div className="bg-orange-500 bg-opacity-40 p-24 rounded-xl my-10">
+    <div className="bg-gray-200  p-24 rounded-xl my-10">
+      <Helmet>
+        <title>Craft Canvus | Add Categories</title>
+      </Helmet>
       <h2 className="text-3xl font-extrabold text-center mb-5">
         Add a Category Item
       </h2>

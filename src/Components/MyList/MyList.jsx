@@ -10,6 +10,7 @@ import { MdEdit } from "react-icons/md";
 import 'animate.css';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import { Helmet } from "react-helmet-async";
 
 const MyList = () => {
   const  crafts  = useLoaderData();
@@ -72,6 +73,9 @@ const MyList = () => {
 
   return (
     <div className="my-10">
+       <Helmet>
+                <title>Craft Canvus | My List</title>
+            </Helmet>
     <h1 className="text-3xl md:text-4xl text-center font-bold mt-10 mb-10 bg-gray-200 rounded-2xl shadow-xl py-8 animate__animated animate__zoomIn">
       {user.displayName}{`'`}s Uploaded Crafts
     </h1>

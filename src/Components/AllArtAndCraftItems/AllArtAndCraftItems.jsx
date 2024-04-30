@@ -6,6 +6,7 @@ import { IoMdTime } from "react-icons/io";
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import 'animate.css';
+import { Helmet } from "react-helmet-async";
 
 const AllArtAndCraftItems = () => {
   const [crafts, setCrafts] = useState(null);
@@ -26,6 +27,9 @@ const AllArtAndCraftItems = () => {
 
   return (
     <div>
+       <Helmet>
+                <title>Craft Canvus | All Art & Crafts</title>
+            </Helmet>
       <h1 className="text-3xl md:text-4xl text-center font-bold mt-10 mb-16 bg-gray-200 rounded-2xl shadow-xl py-8 animate__animated animate__zoomIn">
         All Art & Crafts
       </h1>

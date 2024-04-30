@@ -96,9 +96,9 @@ const SignUp = () => {
   };
   return (
     <>
-      <Helmet>
-        <title>Template | Sign Up</title>
-      </Helmet>
+       <Helmet>
+                <title>Craft Canvus | Sign Up</title>
+            </Helmet>
 
       <div className="mb-5">
         <div

@@ -1,5 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import 'animate.css';
+import { Helmet } from "react-helmet-async";
 // import { IoMdInformationCircle } from "react-icons/io";
 // import { FaLocationArrow } from "react-icons/fa6";
 
@@ -15,6 +16,9 @@ const Details = () => {
 
   return (
     <div>
+       <Helmet>
+                <title>Craft Canvus | Craft Details</title>
+            </Helmet>
       <div>
       <h2 className="text-3xl md:text-4xl text-center font-bold mt-10 mb-20 bg-gray-200 rounded-2xl shadow-xl py-8 animate__animated animate__zoomIn">
         {clickedCraft.subCategoryName}

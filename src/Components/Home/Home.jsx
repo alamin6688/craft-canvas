@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import About from "../About/About";
 import ArtAndCraftCategories from "../ArtAndCraftCategories/ArtAndCraftCategories";
 import Comments from "../Comments/Comments";
@@ -8,6 +9,9 @@ import Slider from "../Slider/Slider";
 const Home = () => {
     return (
         <div className="min-h-screen">
+            <Helmet>
+                <title>Craft Canvus | Home</title>
+            </Helmet>
             <Slider></Slider>
             <ArtAndCraftCategories></ArtAndCraftCategories>
             <CraftItems></CraftItems>
